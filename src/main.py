@@ -1,6 +1,4 @@
-
 from time import sleep
-
 
 def main():
     while True:

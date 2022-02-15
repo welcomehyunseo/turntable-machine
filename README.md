@@ -2,6 +2,14 @@
 
 turntable machine with python system
 
+# SSH config for vs code
+```
+Host admin@192.168.219.108:22
+  HostName 192.168.219.108
+  User admin
+  Port 22
+```
+
 # Make virtual environment
 
 ```bash
