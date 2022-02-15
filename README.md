@@ -2,6 +2,16 @@
 
 turntable machine with python system
 
+# Set up in raspberry pi board
+```bash
+sudo apt-get update
+sudo apt install git-all
+sudo apt-get install python
+sudo apt install python3-pip
+git clone https://github.com/welcomehyunseo/turntable-machine.git
+pip3 install -r requirements.txt
+```
+
 # SSH config for vs code
 ```
 Host admin@192.168.219.108:22
