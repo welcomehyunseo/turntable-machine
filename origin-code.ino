@@ -132,16 +132,12 @@ void turnMotor(int motor)
                 if (digitalRead(PUSH_BUTTON))
                 {
                     digitalWrite(MOTOR3_DISK, LOW);
-                    while (digitalRead(PUSH_BUTTON))
-                        ;
+                    while (digitalRead(PUSH_BUTTON));
                     // 버튼 누르면 일시 정지
                     // delay(500);
                     Serial.println("모터3 일시정지");
                     while (!digitalRead(PUSH_BUTTON))
-                    {
-                    }
-                    while (digitalRead(PUSH_BUTTON))
-                        ;
+                    while (digitalRead(PUSH_BUTTON));
                     //다시 버튼 누면 재개됨
                     // delay(500);
                     digitalWrite(MOTOR3_DISK, HIGH);
@@ -295,16 +291,16 @@ void debounce()
 
 void loop()
 {
-    if (digitalRead(SENSOR5) == LOW)
-    {
-        digitalWrite(LAMP_GREEN, LOW);
-        digitalWrite(LAMP_RED, HIGH);
-    }
-    else
+    if (digitalRead(SENSOR5) == HIGH)
     {
         digitalWrite(LAMP_GREEN, HIGH);
         digitalWrite(LAMP_RED, LOW);
         debounce();
         Serial.println("debounce");
+    }
+    else
+    {
+        digitalWrite(LAMP_GREEN, LOW);
+        digitalWrite(LAMP_RED, HIGH);
     }
 }
